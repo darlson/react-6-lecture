@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, withRouter } from 'react-router-dom'
+import {connect} from 'react-redux'
 import './header.css'
+import { combineReducers } from 'redux'
 
 const Header = (props) => {
   return (
@@ -32,4 +34,9 @@ const Header = (props) => {
     </header>
   )
 }
-export default withRouter(Header)
+
+const mapStateToProps = reduxState => {
+  return reduxState
+}
+
+export default connect(mapStateToProps)(withRouter(Header))
